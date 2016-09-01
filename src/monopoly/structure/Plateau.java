@@ -11,6 +11,7 @@ public class Plateau {
 	
 	public Plateau() {
 		super();
+		joueurs = new ArrayList<Player>();
 	}
 
 	public Plateau(Case[] plateau, ArrayList<Player> joueurs) {
