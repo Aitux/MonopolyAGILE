@@ -15,4 +15,5 @@ public class ServicesPublics {
 		this.prixAchat=loyerActuel;
 		this.loyeractuel=loyerActuel;
 	}
+	
 }
