@@ -5,27 +5,34 @@ import entite.*;
 import java.util.ArrayList;
 
 public class Rue extends Propriete{
+	private Player Proprietaire=null;
+	private String nom;
+	private int prixAchat;
 	private int maisons=0;
+	private int loyeractuel;
+	private ArrayList<Propriete> rueadjointes;
+	private int prixtab[];
 	
-	public Rue(String nom, int prixAchat, ArrayList<Integer> prixtab) {
-		super(nom, prixAchat, prixtab);
+	public Rue(String nom, int prixAchat, int loyerActuel) {
+		this.nom=nom;
+		this.prixAchat=loyerActuel;
+		this.loyeractuel=loyerActuel;
 	}
 	
-	public int Loyer(){
+	public void Loyer(){
 		int terraintotal=0;
-		int prixloyer=super.prixtab.get(1);
-		for(Propriete terrain : super.itemadjointes){
+		for(Propriete terrain : rueadjointes){
 			if(terrain.Proprietaire.getId()==this.Proprietaire.getId()){
 				terraintotal++;
 			}
 		}	
-		if(terraintotal==super.itemadjointes.size()){
-			prixloyer=super.prixtab.get(2);
+		if(terraintotal==rueadjointes.size()){
+			//set le loyeractuel
 			if(maisons!=0){
-				prixloyer=super.prixtab.get(2+maisons);
+				loyeractuel=prixtab[maisons];
 			}
 		}
-		return prixloyer;
+		
 	}
 	
 }
