@@ -35,6 +35,14 @@ public class Player {
 		this.argent = argent;
 	}
 	
+	public void giveArgent(int argent){
+		this.argent += argent;
+	}
+	
+	public void pickOffArgent(int argent){
+		this.argent -= argent;
+	}
+	
 	public String getName() {
 		return name;
 	}
