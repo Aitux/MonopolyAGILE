@@ -3,7 +3,15 @@ package entite;
 import java.util.ArrayList;
 
 public class Player {
-	private String name;
+	private String name = "";
+	private ArrayList proprietes= new ArrayList<>();
+	private int id = 0;
+	
+	public Player(String name, int id){
+		this.name = name;
+		this.id = id;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -32,15 +40,6 @@ public class Player {
 	public void setProprietes(ArrayList proprietes) {		
 		this.proprietes = proprietes;
 	}
-
-
-	private int id;
-	private ArrayList proprietes= new ArrayList<>();
-	
-	public Player(String name){
-		this.name = name;
-	}
-	
 	
 	@Override
 	public String toString() {
