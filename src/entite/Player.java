@@ -2,12 +2,21 @@ package entite;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Player {
 	private String name = "";
 	private ArrayList proprietes= new ArrayList<>();
 	private int id = 0;
 	
+	private AtomicInteger at = new AtomicInteger();
+	
+	public Player(){}
+	
+	public Player(String name){
+		this.name = name;
+		this.id = at.addAndGet(1);
+	}
 	public Player(String name, int id){
 		this.name = name;
 		this.id = id;
@@ -42,9 +51,9 @@ public class Player {
 		this.proprietes = proprietes;
 	}
 	
-	public int deplacement(){
+	public int move(){
 		Random r =new Random();
-		return r.nextInt(13)+1;
+		return r.nextInt(11)+2;
 	}
 	
 	@Override
