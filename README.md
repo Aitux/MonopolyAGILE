@@ -1,1 +1,0 @@
-# MonopolyAGILE
