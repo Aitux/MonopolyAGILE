@@ -5,26 +5,20 @@ package heritage;
 import java.util.ArrayList;
 
 public class Gare extends Propriete{
-	private String nom;
-	private int prixAchat;
-	private int loyeractuel;
-	private ArrayList<Propriete> gareadjointes;
-	private int prixtab[];
 	
-	public Gare(String nom, int prixAchat, int loyerActuel) {
-		this.nom=nom;
-		this.prixAchat=loyerActuel;
-		this.loyeractuel=loyerActuel;
+	public Gare(String nom, int prixAchat, ArrayList<Integer> prixtab) {
+		super(nom, prixAchat, prixtab);
 	}
 	
-	public void Loyer(){
+	public int Loyer(){
 		int terraintotal=0;
-		for(Propriete terrain : rueadjointes){
+		int prixloyer;
+		for(Propriete terrain : super.itemadjointes){
 			if(terrain.Proprietaire.getId()==this.Proprietaire.getId()){
 				terraintotal++;
 			}
-		}	
-		loyeractuel=prixtab[terraintotal];
+		}
+		return prixloyer=super.prixtab.get(1+terraintotal);
 		
 	}
 	
