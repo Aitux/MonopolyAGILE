@@ -2,11 +2,12 @@ package heritage;
 
 import java.util.ArrayList;
 
-public interface Case {
+import entite.Player;
+import enumeration.TypeCase;
 
-	ArrayList<Joueur> JoueurSurCase;
+public abstract class Case {
+
+	ArrayList<Player> JoueurSurCase;
 	String nom; // nom de la case
-	int position;//numero de la case
-	
 	
 }
