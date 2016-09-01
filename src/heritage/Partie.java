@@ -5,6 +5,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JOptionPane;
 
+import entite.Des;
 import entite.Player;
 import monopoly.structure.Plateau;
 
@@ -33,7 +34,8 @@ public class Partie implements KeyListener{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		int deplacement = joueur.move();
+		Des d = joueur.move();
+		int deplacement = d.getA()+d.getB();
 		JOptionPane message = new JOptionPane();
 		message.showMessageDialog(message, "Deplacement "+deplacement);
 	}
@@ -59,7 +61,7 @@ public class Partie implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getKeyCode() == com.sun.glass.events.KeyEvent.VK_ENTER){
+		if(e.getKeyCode() == KeyEvent.VK_ENTER){
 			tour();
 		}	
 	}
