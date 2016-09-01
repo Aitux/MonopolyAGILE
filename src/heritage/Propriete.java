@@ -14,30 +14,25 @@ public abstract class Propriete extends Case
 	protected String nom;
 	protected int prixAchat;
 	protected int loyeractuel;
-	protected ArrayList<Propriete> rueadjointes;
-	protected int prixtab[];
+	protected ArrayList<Propriete> itemadjointes;
+	protected ArrayList<Integer> prixtab;
+	//Prix en ordre croissant
 	
 
 //////////////////////////////////////////////////////////////////////////////
 					// METHODES //
 //////////////////////////////////////////////////////////////////////////////
 	
-	private void nommer(String nom)
-	{
-		this.nom=nom;
+	
+	public Propriete(String nom, int prixAchat, ArrayList<Integer> prixtab) {
+		super(nom);
+		this.prixAchat=prixAchat;
+		this.prixtab=prixtab;
+		
 	}
 	
-	private void prixRue()
-	{}
+	public abstract int Loyer();
 	
-	private void prixGare()
-	{}
-	
-	private void prixServicePublic()
-	{}
-	
-	private void Loyer()
-	{}
 	
 	
 	
