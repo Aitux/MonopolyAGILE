@@ -4,10 +4,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 import monopoly.structure.Plateau;
 import entite.Des;
 import entite.Player;
+import gui.FenetreJeu;
+import gui.SelectionJoueurs;
 
 public class Partie implements KeyListener {
 
@@ -18,12 +21,13 @@ public class Partie implements KeyListener {
 
 	public Partie() {
 		initialisationPartie();
-		joueur = new Player("Paul", 1);
-		board.addJoueur(joueur);
-		while (i < 10) {
-			i++;
-			tour();
-		}
+		SelectionJoueurs select = new SelectionJoueurs();
+		board.setJoueurs(select.getJoueurs());
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				new FenetreJeu(board);
+			}
+		});
 	}
 
 	public void tour() {
