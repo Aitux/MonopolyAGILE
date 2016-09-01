@@ -7,6 +7,7 @@ public class Player {
 	private String name = "";
 	private ArrayList proprietes= new ArrayList<>();
 	private int id = 0;
+	private int argent = 1500;
 	
 	private AtomicInteger at = new AtomicInteger();
 	
@@ -19,6 +20,19 @@ public class Player {
 	public Player(String name, int id){
 		this.name = name;
 		this.id = id;
+	}
+	public Player(String name, int id, int argent){
+		this.name = name;
+		this.id = id;
+		this.argent=argent;
+	}
+	
+	public int getArgent() {
+		return argent;
+	}
+
+	public void setArgent(int argent) {
+		this.argent = argent;
 	}
 	
 	public String getName() {
@@ -56,6 +70,6 @@ public class Player {
 	
 	@Override
 	public String toString() {
-		return "Player [name=" + name + ", id=" + id + ", proprietes=" + proprietes + "]";
+		return "Player [name= " + name + ", id= " + id + ", argent="+argent+"]";
 	}
 }
