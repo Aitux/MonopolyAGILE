@@ -15,6 +15,7 @@ public abstract class Case {
 		this.nom=nom;
 	}
 	
+	
 	public abstract int Loyer();
 	
 	

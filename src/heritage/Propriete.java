@@ -16,6 +16,7 @@ public abstract class Propriete extends Case
 	protected int loyeractuel;
 	protected ArrayList<Propriete> itemadjointes;
 	protected ArrayList<Integer> prixtab;
+	boolean possede=false;
 	//Prix en ordre croissant
 	
 
@@ -29,6 +30,10 @@ public abstract class Propriete extends Case
 		this.prixAchat=prixAchat;
 		this.prixtab=prixtab;
 		
+	}
+	
+	public void setTrueBoolean(){
+		possede=true;
 	}
 	
 	public abstract int Loyer();

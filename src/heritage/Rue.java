@@ -6,9 +6,11 @@ import java.util.ArrayList;
 
 public class Rue extends Propriete{
 	private int maisons=0;
+	private String Color;
 	
-	public Rue(String nom, int prixAchat, ArrayList<Integer> prixtab) {
+	public Rue(String nom, int prixAchat, ArrayList<Integer> prixtab, String Color) {
 		super(nom, prixAchat, prixtab);
+		this.Color=Color;
 	}
 	
 	public int Loyer(){
