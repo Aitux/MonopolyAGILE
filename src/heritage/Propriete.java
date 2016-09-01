@@ -1,14 +1,20 @@
 package heritage;
 
-public abstract class Propriete implements Case
+import java.util.ArrayList;
+
+import entite.Player;
+
+public abstract class Propriete extends Case
 {
 //////////////////////////////////////////////////////////////////////////////
 					// ATTIBUTS //
 //////////////////////////////////////////////////////////////////////////////
 	
-	private String nom;
-	private int prix;
-	private int prixAchat;
+	protected Player Proprietaire=null;
+	protected String nom;
+	protected int prixAchat;
+	protected int loyeractuel;
+	protected ArrayList<Propriete> rueadjointes;
 	
 
 //////////////////////////////////////////////////////////////////////////////
@@ -29,8 +35,6 @@ public abstract class Propriete implements Case
 	
 	private void Loyer()
 	{}
-	private void 
-	
 	
 	
 	
