@@ -1,6 +1,7 @@
 package entite;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Player {
 	private String name = "";
@@ -39,6 +40,11 @@ public class Player {
 
 	public void setProprietes(ArrayList proprietes) {		
 		this.proprietes = proprietes;
+	}
+	
+	public int deplacement(){
+		Random r =new Random();
+		return r.nextInt(13)+1;
 	}
 	
 	@Override
