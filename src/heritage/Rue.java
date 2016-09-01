@@ -1,7 +1,5 @@
 package heritage;
 
-import entite.*;
-
 import java.util.ArrayList;
 
 public class Rue extends Propriete{

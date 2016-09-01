@@ -14,7 +14,7 @@ public class SelectionJoueurs {
 		String nb = "";
 		do {
 			nb = JOptionPane.showInputDialog("Nombre de joueurs :");
-		} while (!nb.matches("[0-9]") || Integer.parseInt(nb) > 6);
+		} while (!nb.matches("[0-9]") || Integer.parseInt(nb) > 6 || Integer.parseInt(nb)==0);
 
 		for (int i = 0; i < Integer.parseInt(nb); i++) {
 			joueurs.add(new Player(JOptionPane.showInputDialog("Nom du Joueur N°"+ (int)(i+1))));

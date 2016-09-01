@@ -32,6 +32,14 @@ public abstract class Propriete extends Case
 		
 	}
 	
+	public int getPrixAchat() {
+		return prixAchat;
+	}
+
+	public void setPrixAchat(int prixAchat) {
+		this.prixAchat = prixAchat;
+	}
+
 	public void setTrueBoolean(){
 		possede=true;
 	}
