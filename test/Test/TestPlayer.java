@@ -13,6 +13,5 @@ public class TestPlayer {
 		Player p= new Player();
 		assertTrue(p.move()<13 && p.move()>1);
 	}
-
 	
 }
