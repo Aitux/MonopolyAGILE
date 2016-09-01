@@ -15,14 +15,17 @@ public abstract class Propriete extends Case
 	protected int prixAchat;
 	protected int loyeractuel;
 	protected ArrayList<Propriete> rueadjointes;
+	protected int prixtab[];
 	
 
 //////////////////////////////////////////////////////////////////////////////
 					// METHODES //
 //////////////////////////////////////////////////////////////////////////////
 	
-	private void nommer()
-	{}
+	private void nommer(String nom)
+	{
+		this.nom=nom;
+	}
 	
 	private void prixRue()
 	{}
