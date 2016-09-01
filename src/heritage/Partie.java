@@ -1,34 +1,33 @@
 package heritage;
 
 import java.awt.event.KeyEvent;
-
 import java.awt.event.KeyListener;
 
 import javax.swing.JOptionPane;
 
+import monopoly.structure.Plateau;
 import entite.Des;
 import entite.Player;
-import monopoly.structure.Plateau;
 
-public class Partie implements KeyListener{
-	
+public class Partie implements KeyListener {
+
 	private Plateau board;
 	private Player joueur;
-	int i=0;
-	int doublon=0;
+	int i = 0;
+	int doublon = 0;
 
-	public Partie(){
+	public Partie() {
 		initialisationPartie();
-		joueur=new Player("Paul",1);
+		joueur = new Player("Paul", 1);
 		board.addJoueur(joueur);
-		while(i<10){
+		while (i < 10) {
 			i++;
 			tour();
 		}
 	}
-	
-	public void tour(){
-		
+
+	public void tour() {
+
 		System.out.println(board.toString());
 		try {
 			Thread.sleep(1000);
@@ -37,20 +36,20 @@ public class Partie implements KeyListener{
 			e.printStackTrace();
 		}
 		Des d = joueur.move();
-		int deplacement = d.getA()+d.getB();
-		if(d.isDoublon()){
+		int deplacement = d.getA() + d.getB();
+		if (d.isDoublon()) {
 			doublon++;
-			if(doublon==3){
-				joueur.prison=true;
+			if (doublon == 3) {
+				joueur.prison = true;
 			}
-		}else{
-			doublon=0;
+		} else {
+			doublon = 0;
 		}
 		JOptionPane message = new JOptionPane();
-		message.showMessageDialog(message, "Deplacement "+deplacement);
+		message.showMessageDialog(message, "Deplacement " + deplacement);
 	}
-	
-	public void initialisationPartie(){
+
+	public void initialisationPartie() {
 		board = new Plateau();
 	}
 
@@ -62,29 +61,25 @@ public class Partie implements KeyListener{
 		this.joueur = joueur;
 	}
 
-	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getKeyCode() == KeyEvent.VK_ENTER){
+		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 			tour();
-		}	
+		}
 	}
 
-	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
+
 	}
-	
-	public static void main(String[] args){
-		
+
+	public static void main(String[] args) {
+
 		Partie partie = new Partie();
-	
+
 	}
 }

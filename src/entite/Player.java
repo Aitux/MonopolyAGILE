@@ -1,11 +1,13 @@
 package entite;
 
+import heritage.Propriete;
+
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Player {
 	private String name = "";
-	private ArrayList proprietes= new ArrayList<>();
+	private ArrayList<Propriete> proprietes= new ArrayList<Propriete>();
 	private int id = 0;
 	private int argent = 1500;
 	public boolean prison =false;
