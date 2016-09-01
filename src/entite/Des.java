@@ -6,6 +6,11 @@ public class Des {
 	private int a=1;
 	private int b=1;
 	
+	public Des(int a,int b){
+		this.a =a;
+		this.b =b;
+	}
+	
 	public int getA() {
 		return a;
 	}
@@ -26,6 +31,10 @@ public class Des {
 		Random r = new Random();
 		a = r.nextInt(6)+1;
 		b = r.nextInt(6)+1;
+	}
+	
+	public boolean isDoublon(){
+		return a==b;
 	}
 	
 	
