@@ -8,6 +8,7 @@ public class Player {
 	private ArrayList proprietes= new ArrayList<>();
 	private int id = 0;
 	private int argent = 1500;
+	public boolean prison =false;
 	
 	private AtomicInteger at = new AtomicInteger();
 	

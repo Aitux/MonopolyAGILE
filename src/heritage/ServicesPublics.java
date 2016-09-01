@@ -9,6 +9,7 @@ public class ServicesPublics extends Propriete{
 	}
 	
 	public int Loyer(){
+		return loyeractuel;
 		
 	}
 	

@@ -15,6 +15,7 @@ public class Partie implements KeyListener{
 	private Plateau board;
 	private Player joueur;
 	int i=0;
+	int doublon=0;
 
 	public Partie(){
 		initialisationPartie();
@@ -37,6 +38,14 @@ public class Partie implements KeyListener{
 		}
 		Des d = joueur.move();
 		int deplacement = d.getA()+d.getB();
+		if(d.isDoublon()){
+			doublon++;
+			if(doublon==3){
+				joueur.prison=true;
+			}
+		}else{
+			doublon=0;
+		}
 		JOptionPane message = new JOptionPane();
 		message.showMessageDialog(message, "Deplacement "+deplacement);
 	}
