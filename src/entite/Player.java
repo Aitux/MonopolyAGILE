@@ -1,7 +1,6 @@
 package entite;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Player {
@@ -51,9 +50,8 @@ public class Player {
 		this.proprietes = proprietes;
 	}
 	
-	public int move(){
-		Random r =new Random();
-		return r.nextInt(11)+2;
+	public Des move(){
+		return new Des();
 	}
 	
 	@Override
