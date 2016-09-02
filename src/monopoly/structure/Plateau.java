@@ -1,11 +1,11 @@
 package monopoly.structure;
 
-import heritage.Case;
-import heritage.Neutre;
-import heritage.Rue;
-
 import java.io.IOException;
 import java.util.ArrayList;
+
+import monopoly.elements.Case;
+import monopoly.elements.Neutre;
+import monopoly.elements.Rue;
 
 import entite.Player;
 
@@ -30,16 +30,22 @@ public class Plateau {
 
 	private void initialisation(ArrayList<String[]> dataCases) {
 		for (int i = 0; i < dataCases.size(); i++) {
+			System.out.println("Size :" + dataCases.size());
 			if (i == 40)
 				break;
+
 			String[] s = dataCases.get(i);
-			if (s[1].equals("Idle")) {
+
+			plateau[i] = new Neutre(s[0]);
+
+			if (s[1].equals("\"Idle\"")) {
 				plateau[i] = new Neutre(s[0]);
 			}
-			if (s[1].equals("Street")) {
+
+			if (s[1].equals("\"Street\"")) {
 				ArrayList<Integer> prixTab = new ArrayList<Integer>();
 				for (int num = 6; i < 12; i++) {
-					prixTab.add(Integer.parseInt(s[i]));
+					prixTab.add(Integer.parseInt(s[num]));
 				}
 				plateau[i] = new Rue(s[0], Integer.parseInt(s[4]), prixTab,
 						s[2]);
@@ -48,9 +54,9 @@ public class Plateau {
 	}
 
 	public String cetteCase(int num) {
-		String rez = "";
-		// TODO Affichage infos de la case
-		return rez;
+		if (plateau[num] != null)
+			return plateau[num].getNom();
+		return "none";
 	}
 
 	public boolean addJoueur(Player p) {

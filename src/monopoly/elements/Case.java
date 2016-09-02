@@ -10,12 +10,23 @@ public abstract class Case {
 	ArrayList<Player> JoueurSurCase;
 	String nom; // nom de la case
 	TypeCase Type;
+	int prixAchat;
 	
 	public Case(String nom){
 		this.nom=nom;
 	}
 	
 	
+	public int getPrixAchat() {
+		return prixAchat;
+	}
+
+
+	public void setPrixAchat(int prixAchat) {
+		this.prixAchat = prixAchat;
+	}
+
+
 	public abstract int Loyer();
 
 

@@ -1,15 +1,11 @@
 package gui;
 
-import heritage.Tour;
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,6 +14,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import monopoly.elements.Neutre;
+import monopoly.elements.Propriete;
+import monopoly.elements.Rue;
+import monopoly.elements.Tour;
 import monopoly.structure.Plateau;
 import entite.Des;
 
@@ -28,8 +28,10 @@ public class FenetreJeu extends JPanel implements ActionListener {
 	private JLabel image;
 	private JLabel sous = new JLabel();
 	private JLabel caseDuJoueur = new JLabel("truc muche");
+	private JLabel caseDuJoueurPrix = new JLabel("truc muche");
 	private JLabel aQuiLeTour = new JLabel();
 	private JButton des = new JButton(LDes);
+	private JButton achat = new JButton("Acheter !");
 	private JLabel position = new JLabel();
 	private JFrame frame = new JFrame("Monopoly");
 	private JPanel info = new JPanel();
@@ -57,6 +59,7 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		this.tour = new Tour(board.getJoueurs().get(0));
 
 		des.addActionListener(this);
+		achat.addActionListener(this);
 	}
 
 	private void initInfo() {
@@ -68,6 +71,7 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		info.add(des);
 		info.add(position);
 		info.add(caseDuJoueur);
+		info.add(caseDuJoueurPrix);
 		majInfo();
 	}
 
@@ -75,13 +79,39 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		aQuiLeTour.setText("Joueur : " + tour.getJoueur().getName());
 		position.setText("Case : " + tour.getJoueur().getPosition());
 		sous.setText("Argent :" + tour.getJoueur().getArgent());
-		caseDuJoueur.setText(board.cetteCase(tour.getJoueur().getPosition()));
+
+		if (board.getPlateau()[tour.getJoueur().getPosition()] != null)
+			caseDuJoueur.setText(board.getPlateau()[tour.getJoueur()
+					.getPosition()].getNom());
+		else
+			caseDuJoueur.setText("");
+
+		if (board.getPlateau()[tour.getJoueur().getPosition()] != null)
+			caseDuJoueurPrix.setText(""
+					+ board.getPlateau()[tour.getJoueur().getPosition()]
+							.getPrixAchat());
+		else
+			caseDuJoueurPrix.setText("");
+		if (!(board.getPlateau()[tour.getJoueur().getPosition()] instanceof Neutre)) {
+			info.add(achat);
+		}
+
+		if (!(board.getPlateau()[tour.getJoueur().getPosition()] instanceof Rue))
+			info.remove(achat);
+
+		info.repaint();
+		repaint();
 	}
 
 	public void actionPerformed(ActionEvent a) {
 		if (a.getSource() == des && des.getText().equals(LDes)) {
+			info.remove(achat);
+			info.repaint();
 			lanceDeDes();
+			majInfo();
 		} else if (a.getSource() == des && des.getText().equals(JSui)) {
+			info.remove(achat);
+			info.repaint();
 			for (int i = 0; i < board.getJoueurs().size(); i++) {
 				if (board.getJoueurs().get(i).equals(tour.getJoueur())) {
 					tour = new Tour(board.getJoueurs().get(
@@ -92,9 +122,31 @@ public class FenetreJeu extends JPanel implements ActionListener {
 			des.setText(LDes);
 			majInfo();
 		}
+		if (a.getSource() == achat) {
+			acheter();
+		}
+	}
+
+	private void acheter() {
+		info.remove(achat);
+
+		int caseP = tour.getJoueur().getPosition();
+		if (board.getPlateau()[caseP] instanceof Propriete) {
+			int prixCase = ((Propriete) (board.getPlateau()[caseP]))
+					.getPrixAchat();
+
+			if (tour.getJoueur().getArgent() - prixCase > 0) {
+				tour.getJoueur().addCase(
+						(Propriete) (board.getPlateau()[caseP]));
+				tour.getJoueur().setArgent(
+						tour.getJoueur().getArgent() - prixCase);
+			}
+		}
+		majInfo();
 	}
 
 	private void lanceDeDes() {
+		majInfo();
 		Des lan = new Des();
 		tour.testDouble(lan);
 		if (tour.getJoueur().getPrison() > 0) {

@@ -1,9 +1,11 @@
 package entite;
 
-import heritage.Propriete;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import monopoly.elements.Case;
+import monopoly.elements.Propriete;
 
 public class Player {
 	private String name = "";
@@ -89,6 +91,10 @@ public class Player {
 			position = nb + position - 40;
 	}
 
+	public void addCase(Propriete case1) {
+		proprietes.add(case1);
+	}
+	
 	@Override
 	public String toString() {
 		return "Player [name= " + name + ", id= " + id + ", argent= " + argent
