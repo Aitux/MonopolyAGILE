@@ -43,12 +43,4 @@ public class Tour {
 	public void setJoueur(Player joueur) {
 		this.joueur = joueur;
 	}
-
-	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				new FenetreJeu();
-			}
-		});
-	}
 }
