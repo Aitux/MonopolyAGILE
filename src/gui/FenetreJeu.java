@@ -14,17 +14,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-<<<<<<< HEAD
 import monopoly.elements.Neutre;
 import monopoly.elements.Propriete;
 import monopoly.elements.Rue;
 import monopoly.elements.Tour;
 import monopoly.structure.Plateau;
-=======
->>>>>>> d9767b8fc6d75aad68f2bccefceef139fe7f613c
 import entite.Des;
-import monopoly.elements.Tour;
-import monopoly.structure.Plateau;
 
 public class FenetreJeu extends JPanel implements ActionListener {
 
