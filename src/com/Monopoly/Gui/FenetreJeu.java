@@ -80,16 +80,20 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		position.setText("Case : " + tour.getJoueur().getPosition());
 		sous.setText("Argent :" + tour.getJoueur().getArgent());
 
-		if (board.getPlateau()[tour.getJoueur().getPosition()] != null)
+		if (board.getPlateau()[tour.getJoueur().getPosition()] != null){
 			caseDuJoueur.setText(board.getPlateau()[tour.getJoueur()
 					.getPosition()].getNom());
+		}
 		else
 			caseDuJoueur.setText("");
 
-		if (board.getPlateau()[tour.getJoueur().getPosition()] != null)
+		if (board.getPlateau()[tour.getJoueur().getPosition()] != null){
+			System.out.println(board.getPlateau()[tour.getJoueur().getPosition()]
+							.getPrixAchat());
 			caseDuJoueurPrix.setText(""
 					+ board.getPlateau()[tour.getJoueur().getPosition()]
 							.getPrixAchat());
+		}
 		else
 			caseDuJoueurPrix.setText("");
 		if (!(board.getPlateau()[tour.getJoueur().getPosition()] instanceof Neutre)) {

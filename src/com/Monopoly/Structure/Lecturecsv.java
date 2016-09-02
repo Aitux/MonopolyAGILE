@@ -39,6 +39,8 @@ public class Lecturecsv {
 				resultat = resultat + "\n" + val;
 			}*/
 		}
+		is.close();
+		isr.close();
 		br.close();
 		//System.out.println(resultat);
 		return dataCases;

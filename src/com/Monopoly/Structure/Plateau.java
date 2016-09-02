@@ -41,11 +41,13 @@ public class Plateau {
 				plateau[i] = new Neutre(s[0]);
 			}
 
-			if (s[1].equals("\"Street\"")) {
+			System.out.println(s[4]);
+			if (s[1].equals("Street")) {
 				ArrayList<Integer> prixTab = new ArrayList<Integer>();
 				for (int num = 6; i < 12; i++) {
 					prixTab.add(Integer.parseInt(s[num]));
 				}
+				System.out.println(s[4]);
 				plateau[i] = new Rue(s[0], Integer.parseInt(s[4]), prixTab,
 						s[2]);
 			}
