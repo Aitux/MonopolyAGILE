@@ -151,7 +151,7 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		tour.testDouble(lan);
 		if (tour.getJoueur().getPrison() > 0) {
 			tour.getJoueur().setPosition(10);
-			JOptionPane.showConfirmDialog(this, "Allez En Prison !");
+			JOptionPane.showMessageDialog(this, "Allez En Prison !");
 		}
 		tour.getJoueur().move(lan.getA() + lan.getB());
 		majInfo();
