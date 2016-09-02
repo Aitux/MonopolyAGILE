@@ -7,7 +7,7 @@ import monopoly.elements.Propriete;
 
 public class Player {
 	private String name = "";
-	public int position = 0;
+	private int position = 0;
 	private ArrayList<Propriete> proprietes = new ArrayList<Propriete>();
 	private int id = 0;
 	private int argent = 1500;

@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import entite.Des;
 import entite.Player;
 
 public class TestPlayer {
@@ -12,12 +11,12 @@ public class TestPlayer {
 	@Test
 	public void testMove() {
 		Player p= new Player();
-		p.position=10;
+		p.setPosition(10);
 		p.move(6);
-		assertTrue(p.position==16);
-		p.position=39;
+		assertTrue(p.getPosition()==16);
+		p.setPosition(39);
 		p.move(2);
-		assertTrue(p.position==1);
+		assertTrue(p.getPosition()==1);
 	}
 	
 	@Test
@@ -26,5 +25,12 @@ public class TestPlayer {
 		assertEquals("Player [name= Mathew, id= 1, argent= 1500]", p.toString());
 		System.out.println(p.toString());
 		
+	}
+	
+	@Test
+	public void testArgent(){
+		Player m = new Player("Matthew");
+		m.pickOffArgent(200);
+		assertTrue(m.getArgent() == 1300);
 	}
 }
