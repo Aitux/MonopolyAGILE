@@ -29,10 +29,10 @@ public class Tour {
 	}
 	
 	public int testCashEvent(){
-		if(joueur.position==4){
+		if(joueur.getPosition()==4){
 			joueur.pickOffArgent(200);
 			return 200;
-		}else if(joueur.position==38){
+		}else if(joueur.getPosition()==38){
 			joueur.pickOffArgent(100);
 			return 100;
 		}
