@@ -28,6 +28,17 @@ public class Tour {
 		}
 	}
 	
+	public int testCashEvent(){
+		if(joueur.position==4){
+			joueur.pickOffArgent(200);
+			return 200;
+		}else if(joueur.position==38){
+			joueur.pickOffArgent(100);
+			return 100;
+		}
+		return 0;
+	}
+	
 	public int getDoublon() {
 		return doublon;
 	}

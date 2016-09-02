@@ -14,12 +14,17 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+<<<<<<< HEAD
 import monopoly.elements.Neutre;
 import monopoly.elements.Propriete;
 import monopoly.elements.Rue;
 import monopoly.elements.Tour;
 import monopoly.structure.Plateau;
+=======
+>>>>>>> d9767b8fc6d75aad68f2bccefceef139fe7f613c
 import entite.Des;
+import monopoly.elements.Tour;
+import monopoly.structure.Plateau;
 
 public class FenetreJeu extends JPanel implements ActionListener {
 
@@ -43,7 +48,7 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		frame.setResizable(false);
 		init();
 		image = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(
-				FenetreJeu.class.getResource("/monopoly-plateau.jpg"))));
+				this.getClass().getResource("/monopoly-plateau.jpg"))));
 		this.setLayout(new BorderLayout());
 		this.add(image, BorderLayout.CENTER);
 		initInfo();
@@ -156,6 +161,9 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		tour.getJoueur().move(lan.getA() + lan.getB());
 		majInfo();
 
+		int taxe = tour.testCashEvent();
+		if(taxe!=0)JOptionPane.showMessageDialog(this,
+				"Vous devez payer la taxe de "+taxe);
 		if (!lan.isDoublon()) {
 			des.setText(JSui);
 			info.repaint();

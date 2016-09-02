@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import monopoly.elements.Case;
 import monopoly.elements.Neutre;
 import monopoly.elements.Rue;
-
 import entite.Player;
 
 public class Plateau {

@@ -1,10 +1,8 @@
 package entite;
 
-
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import monopoly.elements.Case;
 import monopoly.elements.Propriete;
 
 public class Player {
