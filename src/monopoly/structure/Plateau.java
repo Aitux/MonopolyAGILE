@@ -1,13 +1,12 @@
 package monopoly.structure;
 
-import heritage.Case;
-import heritage.Neutre;
-import heritage.Rue;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
 import entite.Player;
+import monopoly.elements.Case;
+import monopoly.elements.Neutre;
+import monopoly.elements.Rue;
 
 public class Plateau {
 
