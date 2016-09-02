@@ -1,12 +1,12 @@
 package Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import entite.Des;
 import entite.Player;
-import heritage.Tour;
+import monopoly.elements.Tour;
 
 public class TestTour {
 
@@ -19,4 +19,11 @@ public class TestTour {
 		assertEquals(t.getDoublon(),0);
 	}
 
+	@Test
+	public void testEventCash() {
+		Player alice =new Player("Alice");
+		Tour t = new Tour(alice);
+		alice.setPosition(4);		
+		assertEquals(t.testCashEvent(),200);
+	}
 }
