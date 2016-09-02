@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import monopoly.elements.Propriete;
-
+	
 public class Player {
 	private String name = "";
 	private int position = 0;
@@ -85,8 +85,10 @@ public class Player {
 	public void move(int nb) {
 		if (position + nb < 40)
 			position = position += nb;
-		else if(position +nb >=40)
+		else if(position +nb >=40){
 			position = nb + position - 40;
+			giveArgent(200);
+		}
 	}
 
 	@Override
