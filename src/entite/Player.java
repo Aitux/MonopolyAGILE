@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Player {
 	private String name = "";
-	private int position = 0;
+	public int position = 0;
 	private ArrayList<Propriete> proprietes = new ArrayList<Propriete>();
 	private int id = 0;
 	private int argent = 1500;
@@ -91,7 +91,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [name= " + name + ", id= " + id + ", argent=" + argent
+		return "Player [name= " + name + ", id= " + id + ", argent= " + argent
 				+ "]";
 	}
 

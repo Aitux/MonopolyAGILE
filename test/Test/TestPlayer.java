@@ -12,10 +12,12 @@ public class TestPlayer {
 	@Test
 	public void testMove() {
 		Player p= new Player();
-		Des d = new Des();
-		d = p.move();
-		int deplacement = d.getA() + d.getB();
-		assertTrue(deplacement<13 && deplacement>1);
+		p.position=10;
+		p.move(6);
+		assertTrue(p.position==16);
+		p.position=39;
+		p.move(2);
+		assertTrue(p.position==1);
 	}
 	
 	@Test
