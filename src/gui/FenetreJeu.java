@@ -104,7 +104,6 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		int taxe =tour.testCashEvent();
 		if(taxe!=0)JOptionPane.showMessageDialog(this,
 				"Vous devez payer la taxe de "+taxe);
-		
 		if (!lan.isDoublon()) {
 			des.setText(JSui);
 			info.repaint();
