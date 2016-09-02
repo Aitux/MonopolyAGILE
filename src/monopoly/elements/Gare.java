@@ -12,13 +12,12 @@ public class Gare extends Propriete{
 	
 	public int Loyer(){
 		int terraintotal=0;
-		int prixloyer;
 		for(Propriete terrain : super.itemadjointes){
 			if(terrain.Proprietaire.getId()==this.Proprietaire.getId()){
 				terraintotal++;
 			}
 		}
-		return prixloyer=super.prixtab.get(1+terraintotal);
+		return super.prixtab.get(1+terraintotal);
 		
 	}
 	
