@@ -41,7 +41,7 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		frame.setResizable(false);
 		init();
 		image = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(
-				FenetreJeu.class.getResource("/monopoly-plateau.jpg"))));
+				this.getClass().getResource("/monopoly-plateau.jpg"))));
 		this.setLayout(new BorderLayout());
 		this.add(image, BorderLayout.CENTER);
 		initInfo();
