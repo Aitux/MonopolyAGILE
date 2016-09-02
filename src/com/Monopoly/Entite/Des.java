@@ -1,4 +1,4 @@
-package entite;
+package com.Monopoly.Entite;
 
 import java.util.Random;
 

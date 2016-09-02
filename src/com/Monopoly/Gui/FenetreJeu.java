@@ -1,4 +1,4 @@
-package gui;
+package com.Monopoly.Gui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -14,12 +14,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import monopoly.elements.Neutre;
-import monopoly.elements.Propriete;
-import monopoly.elements.Rue;
-import monopoly.elements.Tour;
-import monopoly.structure.Plateau;
-import entite.Des;
+import com.Monopoly.Elements.Neutre;
+import com.Monopoly.Elements.Propriete;
+import com.Monopoly.Elements.Rue;
+import com.Monopoly.Elements.Tour;
+import com.Monopoly.Entite.Des;
+import com.Monopoly.Structure.Plateau;
 
 public class FenetreJeu extends JPanel implements ActionListener {
 

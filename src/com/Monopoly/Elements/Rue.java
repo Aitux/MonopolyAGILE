@@ -1,4 +1,4 @@
-package monopoly.elements;
+package com.Monopoly.Elements;
 
 import java.util.ArrayList;
 

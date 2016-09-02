@@ -1,10 +1,10 @@
-package gui;
+package com.Monopoly.Gui;
 
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import entite.Player;
+import com.Monopoly.Entite.Player;
 
 public class SelectionJoueurs {
 

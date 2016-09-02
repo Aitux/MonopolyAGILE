@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import entite.Des;
+import com.Monopoly.Entite.Des;
 
 public class TestDes {
 	Des d;

@@ -1,12 +1,12 @@
-package monopoly.structure;
+package com.Monopoly.Structure;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import monopoly.elements.Case;
-import monopoly.elements.Neutre;
-import monopoly.elements.Rue;
-import entite.Player;
+import com.Monopoly.Elements.Case;
+import com.Monopoly.Elements.Neutre;
+import com.Monopoly.Elements.Rue;
+import com.Monopoly.Entite.Player;
 
 public class Plateau {
 

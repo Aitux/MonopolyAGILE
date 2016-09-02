@@ -1,10 +1,10 @@
-package monopoly.elements;
+package com.Monopoly.Elements;
 
 import javax.swing.SwingUtilities;
 
-import entite.Des;
-import entite.Player;
-import gui.FenetreJeu;
+import com.Monopoly.Entite.Des;
+import com.Monopoly.Entite.Player;
+import com.Monopoly.Gui.FenetreJeu;
 
 public class Tour {
 

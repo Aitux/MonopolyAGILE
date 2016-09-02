@@ -4,9 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import entite.Des;
-import entite.Player;
-import monopoly.elements.Tour;
+import com.Monopoly.Elements.Tour;
+import com.Monopoly.Entite.Des;
+import com.Monopoly.Entite.Player;
 
 public class TestTour {
 

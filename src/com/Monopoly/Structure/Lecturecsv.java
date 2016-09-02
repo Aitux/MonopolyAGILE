@@ -1,4 +1,4 @@
-package monopoly.structure;
+package com.Monopoly.Structure;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

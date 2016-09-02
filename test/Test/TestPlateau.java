@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import entite.Player;
-import monopoly.structure.Plateau;
+import com.Monopoly.Entite.Player;
+import com.Monopoly.Structure.Plateau;
 
 public class TestPlateau {
 	

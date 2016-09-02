@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import entite.Player;
+import com.Monopoly.Entite.Player;
 
 public class TestPlayer {
 

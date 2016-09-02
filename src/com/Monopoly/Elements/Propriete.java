@@ -1,8 +1,8 @@
-package monopoly.elements;
+package com.Monopoly.Elements;
 
 import java.util.ArrayList;
 
-import entite.Player;
+import com.Monopoly.Entite.Player;
 
 public abstract class Propriete extends Case
 {

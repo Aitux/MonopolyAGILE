@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import monopoly.elements.Case;
-import monopoly.elements.Neutre;
+import com.Monopoly.Elements.Case;
+import com.Monopoly.Elements.Neutre;
 
 public class TestNeutre {
 

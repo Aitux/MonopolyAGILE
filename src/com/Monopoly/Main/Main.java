@@ -1,6 +1,7 @@
-import gui.FenetreJeu;
-
+package com.Monopoly.Main;
 import javax.swing.SwingUtilities;
+
+import com.Monopoly.Gui.FenetreJeu;
 
 public class Main {
 

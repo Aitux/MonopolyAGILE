@@ -1,9 +1,9 @@
-package entite;
+package com.Monopoly.Entite;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import monopoly.elements.Propriete;
+import com.Monopoly.Elements.Propriete;
 	
 public class Player {
 	private String name = "";

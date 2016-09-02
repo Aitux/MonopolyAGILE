@@ -1,4 +1,4 @@
-package monopoly.elements;
+package com.Monopoly.Elements;
 
 public class Neutre extends Case {
 
