@@ -5,6 +5,7 @@ import heritage.Tour;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -39,8 +40,8 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		init();
-		image = new JLabel(new ImageIcon(
-				"/home/kwin/Monopoly/MonopolyAGILE/res/monopoly-plateau.jpg"));
+		image = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(
+				FenetreJeu.class.getResource("/monopoly-plateau.jpg"))));
 		this.setLayout(new BorderLayout());
 		this.add(image, BorderLayout.CENTER);
 		initInfo();
@@ -71,9 +72,9 @@ public class FenetreJeu extends JPanel implements ActionListener {
 	}
 
 	private void majInfo() {
-		aQuiLeTour.setText("Joueur : " +tour.getJoueur().getName());
+		aQuiLeTour.setText("Joueur : " + tour.getJoueur().getName());
 		position.setText("Case : " + tour.getJoueur().getPosition());
-		sous.setText("Argent :"+tour.getJoueur().getArgent());
+		sous.setText("Argent :" + tour.getJoueur().getArgent());
 		caseDuJoueur.setText(board.cetteCase(tour.getJoueur().getPosition()));
 	}
 
@@ -106,8 +107,9 @@ public class FenetreJeu extends JPanel implements ActionListener {
 		if (!lan.isDoublon()) {
 			des.setText(JSui);
 			info.repaint();
-		}else 
-			JOptionPane.showMessageDialog(this, "Rejouez vous venez de faire un double");
+		} else
+			JOptionPane.showMessageDialog(this,
+					"Rejouez vous venez de faire un double");
 		majInfo();
 	}
 }
